@@ -12,6 +12,7 @@ class CalculatorRoutes {
 
   routes() {
     this.router.post('/add', calculatorController.add);
+    this.router.get('/show', calculatorController.show);
   }
 
 }

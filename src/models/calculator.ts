@@ -1,7 +1,6 @@
 import { Schema, model } from 'mongoose';
 
 const CalculatorSchema = new Schema({
-  
   idTechnician: {
     type: String,
     required: true,
@@ -9,24 +8,18 @@ const CalculatorSchema = new Schema({
 
   idService: {
     type: String,
-    required: true
+    required: true,
   },
 
-  date: {
+  initialDate: {
     type: Date,
-    required: true
+    required: true,
   },
 
-  initialHour: {
-    type: String,
-    required: true
+  finalDate: {
+    type: Date,
+    required: true,
   },
-
-  finalHour: {
-    type: String,
-    required: true
-  },
-
 });
 
 export default model('Calculator', CalculatorSchema);
