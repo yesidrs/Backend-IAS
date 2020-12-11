@@ -1,4 +1,4 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
 import { calculatorController } from '../controllers/calculator_controller';
 
 class CalculatorRoutes {
@@ -13,6 +13,7 @@ class CalculatorRoutes {
   routes() {
     this.router.post('/add', calculatorController.add);
     this.router.get('/show', calculatorController.show);
+    this.router.get('/findAll', calculatorController.findAll);
   }
 
 }

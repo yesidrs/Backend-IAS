@@ -12,6 +12,21 @@ class CalculatorController {
     const rows = await Calculator.find();
     res.json(rows);
   }
+
+  public async findAll(req: Request, res: Response): Promise<void> {
+    const rows = await Calculator.aggregate([
+      {
+        $group: {
+          _id: '$idTechnician',
+          items: {
+            $push: '$$ROOT',
+          },
+        },
+      },
+    ]);
+
+    res.json(rows);
+  }
 }
 
 export const calculatorController = new CalculatorController();
